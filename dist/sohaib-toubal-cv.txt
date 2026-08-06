@@ -1,0 +1,29 @@
+SOHAIB TOUBAL
+Information Systems Security Engineer | AI for Cybersecurity Researcher
+
+PROFILE
+Master graduate in Information Systems Security specialized in Artificial Intelligence for Cybersecurity, Explainable AI, Deep Learning, and Malware Detection.
+
+RESEARCH INTERESTS
+Explainable Artificial Intelligence • AI for Cybersecurity • Malware Detection • Robust Machine Learning • Graph Neural Networks
+
+PROJECT HIGHLIGHTS
+Explainable Malware Detection Using Deep Learning and Graph Neural Networks
+- Designed a multitask malware detection pipeline combining Feed Forward Neural Networks and Relational GraphSAGE models.
+- Achieved 96.20% accuracy and a 0.9915 ROC-AUC score.
+- Stack: Python, Deep Learning, GNN, SHAP, LIME, SOREL-20M, EMBER, BODMAS.
+
+Full Web Application for Service Request Management — Sonelgaz
+- Developed a complete service-request management application.
+- Stack: Laravel, PHP, MySQL, JavaScript, Bootstrap.
+
+EDUCATION
+Master in Information Systems Security, University of Blida 1 (2026)
+Bachelor in Computer Science, University of Blida 1
+
+EXPERIENCE
+Sonelgaz — 3-month internship
+Web application development and database management.
+
+PORTFOLIO
+Please update the contact links in the website source before sharing this CV.
