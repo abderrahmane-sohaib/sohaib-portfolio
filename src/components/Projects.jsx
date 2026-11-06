@@ -1,6 +1,7 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { createPortal } from "react-dom";
 import { motion } from "framer-motion";
-import { ArrowUpRight, CheckCircle2, ChevronRight } from "lucide-react";
+import { ArrowUpRight, CheckCircle2, ChevronRight, Maximize2, X } from "lucide-react";
 import { projectCategories, projects } from "../data/projects";
 
 function Browser({ children, label }) {
@@ -26,23 +27,42 @@ const sonelgazScreens = [
 ];
 
 function SonelgazGallery() {
+  const [expanded, setExpanded] = useState(null);
+
+  useEffect(() => {
+    const closeOnEscape = (event) => {
+      if (event.key === "Escape") setExpanded(null);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, []);
+
   return <div className="mt-8 border-t border-slate-800 pt-7">
     <div className="flex flex-wrap items-end justify-between gap-2">
       <div>
         <h4 className="text-sm font-semibold text-slate-200">Application screens</h4>
         <p className="mt-1 text-xs leading-5 text-slate-500">Original project screenshots, cropped and anonymized for publication.</p>
       </div>
-      <span className="mono text-[10px] uppercase tracking-[.16em] text-teal-300">Personal data redacted</span>
+      <span className="mono text-[10px] uppercase tracking-[.16em] text-teal-300">Click to enlarge</span>
     </div>
     <div className="mt-4 grid grid-cols-2 gap-3 lg:grid-cols-3">
       {sonelgazScreens.map(([file, label]) => <figure key={file} className="group overflow-hidden rounded-xl border border-slate-800 bg-slate-950/50">
-        <picture>
-          <source media="(max-width: 640px)" srcSet={`/projects/sonelgaz/${file}-mobile.webp`} />
-          <img src={`/projects/sonelgaz/${file}.webp`} alt={`Sonelgaz project — ${label}; personal information redacted`} loading="lazy" width="734" height="520" className="aspect-[1.5/1] w-full object-cover object-top transition duration-500 group-hover:scale-[1.03]" />
-        </picture>
+        <button type="button" onClick={() => setExpanded([file, label])} className="relative block w-full overflow-hidden text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300" aria-label={`Enlarge ${label}`}>
+          <picture>
+            <source media="(max-width: 640px)" srcSet={`/projects/sonelgaz/${file}-mobile.webp`} />
+            <img src={`/projects/sonelgaz/${file}.webp`} alt={`Sonelgaz project — ${label}; personal information redacted`} loading="lazy" width="734" height="520" sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 260px" className="aspect-[1.5/1] w-full object-cover object-top transition duration-500 group-hover:scale-[1.03]" />
+          </picture>
+          <span className="absolute inset-0 grid place-items-center bg-slate-950/0 text-teal-100 opacity-0 transition group-hover:bg-slate-950/45 group-hover:opacity-100"><span className="rounded-full border border-teal-200/40 bg-slate-950/80 p-2"><Maximize2 size={16} /></span></span>
+        </button>
         <figcaption className="border-t border-slate-800 px-3 py-2 text-[11px] font-medium text-slate-400">{label}</figcaption>
       </figure>)}
     </div>
+    {expanded && createPortal(<div role="dialog" aria-modal="true" aria-label={`Expanded ${expanded[1]} screenshot`} className="fixed inset-0 z-[60] grid place-items-center bg-[#02050bdd] p-4 backdrop-blur-sm" onClick={() => setExpanded(null)}>
+      <div className="relative max-h-[92vh] max-w-6xl" onClick={(event) => event.stopPropagation()}>
+        <img src={`/projects/sonelgaz/${expanded[0]}.webp`} alt={`Sonelgaz project — ${expanded[1]}; personal information redacted`} className="max-h-[86vh] max-w-full rounded-xl border border-slate-600 object-contain shadow-2xl" />
+        <div className="mt-3 flex items-center justify-between gap-4 text-sm text-slate-300"><span>{expanded[1]}</span><button type="button" onClick={() => setExpanded(null)} className="inline-flex items-center gap-2 rounded-lg border border-slate-600 bg-slate-900 px-3 py-2 text-xs font-semibold text-slate-100 transition hover:border-teal-300/60"><X size={15} /> Close</button></div>
+      </div>
+    </div>, document.body)}
   </div>;
 }
 
