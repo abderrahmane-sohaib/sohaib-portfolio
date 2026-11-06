@@ -7,7 +7,7 @@ export const projects = [
     longDescription: "The project digitizes service-request workflows through a centralized web platform. It focuses on clear operational views, request tracking, and an administrative experience designed for day-to-day use.",
     technologies: ["Laravel", "PHP", "MySQL", "JavaScript", "HTML/CSS", "Bootstrap"],
     highlights: ["Centralized service-request workflow", "Administrative dashboards and data tables", "Responsive forms and interface views"],
-    preview: "service", note: "Illustrative interface preview — not a production screenshot.",
+    preview: "service", note: "Original anonymized interface mockup — not a production screenshot.",
   },
   {
     id: "elearning", category: "Web Development", title: "E-Learning Web Application", eyebrow: "University group project · Team of 9",
