@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowUpRight, CheckCircle2, ChevronRight, Layers3 } from "lucide-react";
+import { ArrowUpRight, CheckCircle2, ChevronRight } from "lucide-react";
 import { projectCategories, projects } from "../data/projects";
 
 function Browser({ children, label }) {
@@ -13,6 +13,37 @@ function Preview({ type }) {
   if (type === "commerce") return <Browser label="STOREFRONT / COLLECTION"><div className="flex items-center justify-between"><div className="h-2 w-14 rounded bg-slate-100" /><div className="h-4 w-12 rounded bg-slate-800" /></div><div className="mt-3 h-9 rounded-lg bg-gradient-to-r from-blue-400/30 to-teal-300/20" /><div className="mt-3 grid grid-cols-4 gap-2">{[1, 2, 3, 4].map((n) => <div key={n}><div className={`h-14 rounded-lg ${n % 2 ? "bg-blue-400/20" : "bg-teal-300/15"}`} /><div className="mt-2 h-1.5 w-full rounded bg-slate-600" /><div className="mt-1 h-1 w-2/3 rounded bg-slate-700" /></div>)}</div></Browser>;
   if (type === "vote") return <Browser label="CAMPUS / ELECTION"><div className="flex items-center justify-between"><div><div className="h-2 w-20 rounded bg-slate-100" /><div className="mt-2 h-1.5 w-12 rounded bg-slate-700" /></div><span className="rounded-full bg-teal-300/15 px-2 py-1 text-[8px] text-teal-200">Open</span></div><div className="mt-4 grid grid-cols-2 gap-3">{[1, 2].map((n) => <div key={n} className="rounded-xl border border-slate-700 bg-slate-900/60 p-3"><div className="h-7 w-7 rounded-full bg-blue-300/30" /><div className="mt-2 h-1.5 w-full rounded bg-slate-500" /><div className="mt-1 h-1.5 w-3/5 rounded bg-slate-700" /><button className="mt-3 w-full rounded bg-teal-300/80 py-1 text-[8px] font-bold text-slate-950">Select</button></div>)}</div><div className="mt-3 h-2 rounded bg-slate-800"><div className="h-full w-[64%] rounded bg-teal-300" /></div></Browser>;
   return <Browser label="XAI / MALWARE ANALYSIS"><div className="grid grid-cols-[.75fr_1.25fr] gap-3"><div className="space-y-3 rounded-xl border border-slate-800 p-3"><div className="text-[9px] text-slate-400">PE features</div>{[1, 2, 3, 4, 5].map((n) => <div key={n} className="flex gap-1"><i className="h-1.5 w-1.5 rounded-full bg-teal-300" /><div className="h-1.5 flex-1 rounded bg-slate-700" /></div>)}</div><div><div className="rounded-xl border border-blue-300/20 bg-blue-400/[.08] p-3"><div className="text-[9px] text-blue-200">Relational GNN</div><div className="mt-3 flex items-center justify-around">{[1, 2, 3].map((n) => <i key={n} className="h-5 w-5 rounded-full border border-teal-300 bg-teal-300/20 shadow-[0_0_15px_rgba(94,234,212,.4)]" />)}</div></div><div className="mt-3 grid grid-cols-2 gap-2"><div className="rounded-lg bg-teal-300/15 p-2"><div className="text-[8px] text-slate-400">Classification</div><b className="text-xs text-teal-200">96.20%</b></div><div className="rounded-lg bg-blue-300/15 p-2"><div className="text-[8px] text-slate-400">Explainability</div><b className="text-xs text-blue-200">SHAP · LIME</b></div></div></div></div></Browser>;
+}
+
+const sonelgazScreens = [
+  ["registration", "Client registration"],
+  ["client-dashboard", "Client dashboard"],
+  ["new-request", "New service request form"],
+  ["engineers", "Business engineer administration"],
+  ["online-requests", "Online request review"],
+  ["quote-editor", "Quote editing workflow"],
+  ["monthly-report", "Monthly activity report"],
+];
+
+function SonelgazGallery() {
+  return <div className="mt-8 border-t border-slate-800 pt-7">
+    <div className="flex flex-wrap items-end justify-between gap-2">
+      <div>
+        <h4 className="text-sm font-semibold text-slate-200">Application screens</h4>
+        <p className="mt-1 text-xs leading-5 text-slate-500">Original project screenshots, cropped and anonymized for publication.</p>
+      </div>
+      <span className="mono text-[10px] uppercase tracking-[.16em] text-teal-300">Personal data redacted</span>
+    </div>
+    <div className="mt-4 grid grid-cols-2 gap-3 lg:grid-cols-3">
+      {sonelgazScreens.map(([file, label]) => <figure key={file} className="group overflow-hidden rounded-xl border border-slate-800 bg-slate-950/50">
+        <picture>
+          <source media="(max-width: 640px)" srcSet={`/projects/sonelgaz/${file}-mobile.webp`} />
+          <img src={`/projects/sonelgaz/${file}.webp`} alt={`Sonelgaz project — ${label}; personal information redacted`} loading="lazy" width="734" height="520" className="aspect-[1.5/1] w-full object-cover object-top transition duration-500 group-hover:scale-[1.03]" />
+        </picture>
+        <figcaption className="border-t border-slate-800 px-3 py-2 text-[11px] font-medium text-slate-400">{label}</figcaption>
+      </figure>)}
+    </div>
+  </div>;
 }
 
 export default function Projects() {
@@ -29,7 +60,7 @@ export default function Projects() {
     <div className="mt-9 flex flex-wrap gap-2" role="tablist" aria-label="Project categories">{projectCategories.map((item) => <button type="button" role="tab" aria-selected={category === item} key={item} onClick={() => selectCategory(item)} className={`rounded-full border px-4 py-2 text-sm font-medium transition ${category === item ? "border-teal-300/50 bg-teal-300/10 text-teal-100" : "border-slate-700 bg-slate-900/60 text-slate-400 hover:text-slate-200"}`}>{item}</button>)}</div>
     <div className="mt-8 grid gap-5 lg:grid-cols-[.83fr_1.17fr]">
       <div className="space-y-3">{filtered.map((project, index) => <button key={project.id} type="button" onClick={() => setSelectedId(project.id)} className={`glass w-full rounded-2xl p-5 text-left transition ${selected.id === project.id ? "border-teal-300/35 bg-teal-300/[.045]" : "hover:border-slate-600"}`}><span className="mono text-[10px] uppercase tracking-[.17em] text-teal-300">0{index + 1} · {project.eyebrow}</span><h3 className="mt-2 text-lg font-bold text-slate-100">{project.title}</h3><p className="mt-2 text-sm leading-6 text-slate-400">{project.description}</p><span className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-teal-200">View project <ChevronRight size={14} /></span></button>)}</div>
-      <motion.article key={selected.id} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="glass overflow-hidden rounded-[1.6rem]"><div className="bg-[radial-gradient(circle_at_70%_0%,rgba(94,234,212,.14),transparent_40%),linear-gradient(135deg,rgba(30,41,59,.6),rgba(6,10,18,.6))] p-5 sm:p-7"><div className="h-64 sm:h-72"><Preview type={selected.preview} /></div></div><div className="p-6 sm:p-8"><div className="flex flex-wrap items-center gap-3"><span className="mono text-[10px] uppercase tracking-[.18em] text-teal-300">{selected.category}</span><span className="text-xs text-slate-500">{selected.note}</span></div><h3 className="mt-4 text-2xl font-bold tracking-[-.035em] text-slate-100">{selected.title}</h3><p className="mt-3 max-w-3xl leading-7 text-slate-400">{selected.longDescription}</p><div className="mt-6 grid gap-3 sm:grid-cols-2">{selected.highlights.map((item) => <div key={item} className="flex items-start gap-2 text-sm text-slate-300"><CheckCircle2 size={16} className="mt-0.5 shrink-0 text-teal-300" />{item}</div>)}</div>{selected.results && <div className="mt-7 grid gap-3 sm:grid-cols-3">{selected.results.map(([label, value]) => <div key={label} className="rounded-xl border border-teal-300/15 bg-teal-300/[.045] p-3"><p className="text-[10px] uppercase tracking-[.14em] text-slate-500">{label}</p><p className="mt-1 text-lg font-bold text-teal-200">{value}</p></div>)}</div>}<div className="mt-7 flex flex-wrap gap-2">{selected.technologies.map((tech) => <span key={tech} className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 text-xs text-slate-300">{tech}</span>)}</div></div></motion.article>
+      <motion.article key={selected.id} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="glass overflow-hidden rounded-[1.6rem]"><div className="bg-[radial-gradient(circle_at_70%_0%,rgba(94,234,212,.14),transparent_40%),linear-gradient(135deg,rgba(30,41,59,.6),rgba(6,10,18,.6))] p-5 sm:p-7"><div className="h-64 sm:h-72"><Preview type={selected.preview} /></div></div><div className="p-6 sm:p-8"><div className="flex flex-wrap items-center gap-3"><span className="mono text-[10px] uppercase tracking-[.18em] text-teal-300">{selected.category}</span><span className="text-xs text-slate-500">{selected.note}</span></div><h3 className="mt-4 text-2xl font-bold tracking-[-.035em] text-slate-100">{selected.title}</h3><p className="mt-3 max-w-3xl leading-7 text-slate-400">{selected.longDescription}</p><div className="mt-6 grid gap-3 sm:grid-cols-2">{selected.highlights.map((item) => <div key={item} className="flex items-start gap-2 text-sm text-slate-300"><CheckCircle2 size={16} className="mt-0.5 shrink-0 text-teal-300" />{item}</div>)}</div>{selected.results && <div className="mt-7 grid gap-3 sm:grid-cols-3">{selected.results.map(([label, value]) => <div key={label} className="rounded-xl border border-teal-300/15 bg-teal-300/[.045] p-3"><p className="text-[10px] uppercase tracking-[.14em] text-slate-500">{label}</p><p className="mt-1 text-lg font-bold text-teal-200">{value}</p></div>)}</div>}<div className="mt-7 flex flex-wrap gap-2">{selected.technologies.map((tech) => <span key={tech} className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 text-xs text-slate-300">{tech}</span>)}</div>{selected.id === "sonelgaz" && <SonelgazGallery />}</div></motion.article>
     </div>
     <a href="#contact" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-teal-200 transition hover:text-teal-100">Have a project in mind? Let&apos;s discuss it <ArrowUpRight size={16} /></a>
   </section>;
