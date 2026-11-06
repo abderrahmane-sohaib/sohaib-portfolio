@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import {
   ArrowDownRight,
-  Download,
   Mail,
   ShieldCheck,
   BrainCircuit,
@@ -23,34 +22,27 @@ export default function Hero() {
         >
           <div className="inline-flex items-center gap-2 rounded-full border border-teal-300/20 bg-teal-300/[0.07] px-3 py-1.5 text-xs font-medium text-teal-100">
             <span className="h-1.5 w-1.5 rounded-full bg-teal-300 shadow-[0_0_9px_#5eead4]" />
-            Open to cybersecurity research and engineering opportunities
+            Open to web development, software engineering, and security opportunities
           </div>
 
           <h1 className="mt-6 max-w-4xl text-4xl font-extrabold leading-[1.05] tracking-[-0.065em] text-slate-100 sm:text-5xl lg:text-7xl">
-            Cybersecurity Engineer{" "}
+            Full-Stack Web Developer{" "}
             <span className="text-transparent [background:linear-gradient(120deg,#c9fff7_5%,#5eead4_53%,#60a5fa_100%)] bg-clip-text">
-              & AI Researcher
+              | Cybersecurity Engineer
             </span>
           </h1>
 
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
-            I build secure, intelligent systems with a strong focus on
-            explainable AI, malware analysis, and trustworthy automation.
+            Building modern web applications and secure digital solutions,
+            combining software engineering, web development, and cybersecurity.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
-              href="/sohaib-toubal-cv.txt"
-              download
+              href="#projects"
               className="inline-flex items-center justify-center gap-2 rounded-lg bg-teal-300 px-4 py-3 text-sm font-semibold text-slate-950 transition hover:bg-teal-200"
             >
-              <Download size={16} /> Download résumé
-            </a>
-            <a
-              href="#projects"
-              className="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-700 bg-slate-900/70 px-4 py-3 text-sm font-semibold text-slate-200 transition hover:border-teal-300/50 hover:bg-slate-800"
-            >
-              View projects <ArrowDownRight size={16} />
+              View my work <ArrowDownRight size={16} />
             </a>
             <a
               href="#contact"
@@ -62,8 +54,8 @@ export default function Hero() {
 
           <div className="mt-10 grid max-w-xl grid-cols-3 gap-6 border-t border-slate-800 pt-6">
             {[
-              ["02", "Featured projects"],
-              ["05+", "Research areas"],
+              ["05", "Selected projects"],
+              ["03", "Professional dimensions"],
               ["96.20%", "Malware accuracy"],
             ].map(([value, label]) => (
               <div key={label}>
@@ -86,10 +78,10 @@ export default function Hero() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-xs uppercase tracking-[0.25em] text-slate-500">
-                    Security profile
+                    Professional profile
                   </p>
                   <h2 className="mt-2 text-2xl font-semibold text-slate-100">
-                    Threat-aware. Research-driven.
+                    Build. Secure. Explain.
                   </h2>
                 </div>
                 <div className="rounded-full border border-teal-300/30 bg-teal-300/10 p-2 text-teal-200">
@@ -113,7 +105,7 @@ export default function Hero() {
                     <span className="text-sm font-semibold">Engineering</span>
                   </div>
                   <p className="mt-3 text-sm leading-6 text-slate-400">
-                    Frontend systems, dashboards, and secure user interfaces.
+                    Full-stack web apps, dashboards, and practical software.
                   </p>
                 </div>
               </div>
@@ -128,9 +120,8 @@ export default function Hero() {
                   </span>
                 </div>
                 <p className="mt-3 text-sm leading-6 text-slate-400">
-                  Building interpretable AI systems that support analysts,
-                  strengthen defensive workflows, and make security decisions
-                  more transparent.
+                  Developing useful digital products while bringing a security
+                  and AI research perspective to every engineering challenge.
                 </p>
               </div>
             </div>

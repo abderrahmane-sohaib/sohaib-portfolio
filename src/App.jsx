@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
+import Services from "./components/Services";
 import Research from "./components/Research";
 import Contact from "./components/Contact";
 import { ShieldCheck } from "lucide-react";
@@ -16,6 +17,7 @@ function App() {
         <About />
         <Skills />
         <Projects />
+        <Services />
         <Research />
         <Contact />
       </main>
@@ -26,7 +28,7 @@ function App() {
             <span>© {new Date().getFullYear()} Sohaib Toubal</span>
           </div>
           <p className="flex items-center gap-1.5">
-            Designed for secure, intelligent systems <ShieldCheck size={14} className="text-teal-300" />
+            Built with a security-conscious engineering mindset <ShieldCheck size={14} className="text-teal-300" />
           </p>
         </div>
       </footer>

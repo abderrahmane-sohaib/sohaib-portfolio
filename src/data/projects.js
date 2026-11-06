@@ -1,61 +1,45 @@
+export const projectCategories = ["Web Development", "Software Engineering", "Cybersecurity & AI"];
+
 export const projects = [
   {
-    id: 1,
-    title:
-      "Explainable Malware Detection Platform Using Deep Learning and Graph Neural Networks",
-    description:
-      "An AI-powered malware detection platform combining Deep Learning and Graph Neural Networks with Explainable AI techniques to provide accurate and interpretable malware predictions.",
-    longDescription:
-      "Designed for security analysis workflows, this platform combines state-of-the-art deep learning with graph-based representations to uncover malicious patterns while maintaining interpretability for researchers and analysts.",
-    technologies: [
-      "Python",
-      "Deep Learning",
-      "Graph Neural Networks",
-      "RelationalGraphSAGE",
-      "SHAP",
-      "LIME",
-      "GNNExplainer",
-    ],
-    results: [
-      { label: "Accuracy", value: "96.20%" },
-      { label: "ROC-AUC", value: "0.9915" },
-    ],
-    features: [
-      "Explainable predictions with SHAP, LIME, and GNNExplainer",
-      "Graph-based malware classification pipeline",
-      "High-accuracy model evaluation and benchmarking",
-      "Research-oriented interface for security analysis",
-    ],
-    liveUrl: "YOUR_MALWARE_PLATFORM_URL",
-    githubUrl: "YOUR_MALWARE_GITHUB_URL",
-    paperUrl: "YOUR_PAPER_URL",
-    type: "Research Platform",
-    accent: "from-teal-400/20 to-blue-500/20",
+    id: "sonelgaz", category: "Web Development", title: "Sonelgaz Service Request Management Platform", eyebrow: "Licence graduation project · 3-month internship",
+    description: "A full web application created to centralize and streamline service-request management during my internship at Sonelgaz.",
+    longDescription: "The project digitizes service-request workflows through a centralized web platform. It focuses on clear operational views, request tracking, and an administrative experience designed for day-to-day use.",
+    technologies: ["Laravel", "PHP", "MySQL", "JavaScript", "HTML/CSS", "Bootstrap"],
+    highlights: ["Centralized service-request workflow", "Administrative dashboards and data tables", "Responsive forms and interface views"],
+    preview: "service", note: "Illustrative interface preview — not a production screenshot.",
   },
   {
-    id: 2,
-    title: "Sonelgaz Service Request Management - Frontend Application",
-    description:
-      "A modern frontend web application interface designed for managing service requests. The application provides a user-friendly dashboard and responsive interfaces for different user roles.",
-    longDescription:
-      "This frontend experience focuses on a polished user interface for service request management, including authentication, dashboards, forms, and responsive tables for operational workflows.",
-    technologies: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "Bootstrap 5",
-      "Laravel Blade Templates (Frontend Views)",
-    ],
-    features: [
-      "Modern login interface",
-      "Responsive dashboard design",
-      "Service request management views",
-      "Navigation sidebar and forms",
-      "Clean data tables and user experience",
-    ],
-    liveUrl: "YOUR_SONELGAZ_FRONTEND_URL",
-    githubUrl: "YOUR_SONELGAZ_GITHUB_URL",
-    type: "Frontend UI",
-    accent: "from-blue-400/20 to-indigo-500/20",
+    id: "elearning", category: "Web Development", title: "E-Learning Web Application", eyebrow: "University group project · Team of 9",
+    description: "A collaborative university project exploring the design of a web-based learning platform.",
+    longDescription: "This project demonstrates collaborative software development around an online learning experience, with a course-oriented interface and learner progress views presented as an illustrative product preview.",
+    technologies: ["Collaborative development", "Web application design"],
+    highlights: ["Course-centered learning experience", "Collaborative university development", "Progress-focused interface concept"],
+    preview: "learning", note: "Illustrative interface preview — not a production screenshot.",
+  },
+  {
+    id: "ecommerce", category: "Web Development", title: "E-Commerce Website Interfaces", eyebrow: "Web development & interface design",
+    description: "A collection of storefront interface concepts that demonstrate product discovery, browsing, and modern online shopping layouts.",
+    longDescription: "These individual e-commerce interface explorations focus on polished storefront design: product grids, product detail patterns, and responsive shopping flows. They are shown as separate illustrative web design work rather than claims of live commercial stores.",
+    technologies: ["HTML5", "CSS3", "JavaScript", "Bootstrap"],
+    highlights: ["Responsive product grid patterns", "Modern storefront and detail views", "Clear, conversion-aware interface hierarchy"],
+    preview: "commerce", note: "Illustrative interface preview — not a production storefront.",
+  },
+  {
+    id: "voting", category: "Software Engineering", title: "University Voting Application", eyebrow: "Individual university project",
+    description: "An individual voting-management application developed with Java EE for a university project.",
+    longDescription: "The project explores a structured election-management experience with candidate presentation, voting-oriented screens, and a results dashboard. The visual is an illustrative representation of the application concept.",
+    technologies: ["Java EE", "Java"],
+    highlights: ["Individual application development", "Election and candidate management interface", "Voting and result presentation concepts"],
+    preview: "vote", note: "Illustrative interface preview — not a verified production deployment.",
+  },
+  {
+    id: "malware", category: "Cybersecurity & AI", title: "Towards Explainable Malware Detection", eyebrow: "Master's research · M2 Information Systems Security",
+    description: "Multi-task malware detection using deep neural networks and relational graphs, with explainability built into the research workflow.",
+    longDescription: "Towards Explainable Malware Detection: Multi-Task Approaches Using Deep Neural Networks and Relational Graphs. The research combines static PE feature analysis, malware classification, and interpretable AI methods to make model decisions more transparent.",
+    technologies: ["Python", "Deep Learning", "Relational GNNs", "SHAP & LIME", "GNNExplainer"],
+    highlights: ["Static PE feature analysis and malware classification", "Explainability with SHAP, LIME, and GNNExplainer", "Relational graph-based learning pipeline"],
+    results: [["Classification accuracy", "96.20%"], ["ROC-AUC", "0.9915"], ["BODMAS validation", "91.19%"]],
+    preview: "research", note: "Research architecture visualization based on the thesis methodology.",
   },
 ];

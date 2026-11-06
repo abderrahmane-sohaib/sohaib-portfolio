@@ -24,14 +24,15 @@ export default function Research() {
           transition={{ duration: 0.5 }}
         >
           <p className="mono mb-4 flex items-center gap-2 text-xs font-medium uppercase tracking-[0.22em] text-teal-300">
-            <span className="h-px w-6 bg-teal-300/80" /> 04 / Research focus
+            <span className="h-px w-6 bg-teal-300/80" /> 05 / Research focus
           </p>
           <h2 className="text-3xl font-bold tracking-[-0.045em] text-slate-100 sm:text-4xl">
-            Making AI in security more interpretable, resilient, and useful.
+            Explainable AI research for more transparent malware detection.
           </h2>
           <p className="mt-4 max-w-2xl text-base leading-7 text-slate-400">
-            I am drawn to the space where robust learning meets the operational
-            realities of cybersecurity.
+            My Master&apos;s work examines how deep learning and relational graphs
+            can support malware classification while explainability methods help
+            make model outputs more understandable.
           </p>
         </motion.div>
 

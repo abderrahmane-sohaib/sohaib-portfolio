@@ -3,38 +3,29 @@ import { ShieldCheck, BrainCircuit, Code2, Terminal } from "lucide-react";
 
 const skillGroups = [
   {
-    title: "Cybersecurity",
-    icon: ShieldCheck,
-    skills: [
-      "Malware Analysis",
-      "Threat Detection",
-      "Network Security",
-      "Information Systems Security",
-    ],
-  },
-  {
-    title: "Artificial Intelligence",
-    icon: BrainCircuit,
-    skills: [
-      "Python",
-      "Deep Learning",
-      "Neural Networks",
-      "Graph Neural Networks",
-      "Explainable AI",
-      "SHAP",
-      "LIME",
-      "GNNExplainer",
-    ],
-  },
-  {
     title: "Web Development",
     icon: Code2,
-    skills: ["Laravel", "PHP", "MySQL", "JavaScript", "Bootstrap"],
+    skills: [
+      "PHP", "Laravel", "JavaScript", "HTML5", "CSS3", "Bootstrap",
+      "MySQL", "REST API fundamentals", "AJAX / Fetch", "Git & GitHub",
+    ],
   },
   {
-    title: "Tooling & Systems",
+    title: "Programming Languages",
+    icon: BrainCircuit,
+    skills: [
+      "Python", "Java", "C", "C++",
+    ],
+  },
+  {
+    title: "Cybersecurity & AI",
+    icon: ShieldCheck,
+    skills: ["Information Systems Security", "Network Security", "Deep Learning", "Explainable AI", "Malware Detection", "Graph Neural Networks", "SHAP & LIME"],
+  },
+  {
+    title: "Software Engineering",
     icon: Terminal,
-    skills: ["Git", "GitHub", "Linux", "Docker"],
+    skills: ["Java EE", "Database-backed applications", "Collaborative development", "Interface design"],
   },
 ];
 
@@ -55,11 +46,11 @@ export default function Skills() {
             <span className="h-px w-6 bg-teal-300/80" /> 02 / Expertise
           </p>
           <h2 className="text-3xl font-bold tracking-[-0.045em] text-slate-100 sm:text-4xl">
-            A layered technical foundation.
+            A balanced, practical technical foundation.
           </h2>
           <p className="mt-4 max-w-2xl text-base leading-7 text-slate-400">
-            Research depth for emerging threats, paired with the engineering
-            range to build reliable tools and polished interfaces.
+            Full-stack web development and software engineering experience,
+            reinforced by a specialized cybersecurity and AI research focus.
           </p>
         </motion.div>
 

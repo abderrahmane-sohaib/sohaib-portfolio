@@ -5,17 +5,17 @@ const highlights = [
   {
     icon: BadgeCheck,
     title: "Research oriented",
-    text: "Focused on transparent, high-impact AI systems for security contexts.",
+    text: "Exploring transparent AI systems for real cybersecurity contexts.",
   },
   {
     icon: ShieldCheck,
     title: "Security conscious",
-    text: "Designing solutions with defensive thinking and operational reliability.",
+    text: "Bringing defensive thinking to web and software development.",
   },
   {
     icon: Code2,
     title: "Builder mindset",
-    text: "Turning ideas into polished interfaces and practical engineering workflows.",
+    text: "Turning ideas into practical web applications and polished interfaces.",
   },
 ];
 
@@ -36,7 +36,7 @@ export default function About() {
             <span className="h-px w-6 bg-teal-300/80" /> 01 / About
           </p>
           <h2 className="text-3xl font-bold tracking-[-0.045em] text-slate-100 sm:text-4xl">
-            Security-first thinking, built for intelligent systems.
+            A software builder with a security research foundation.
           </h2>
         </motion.div>
 
@@ -47,15 +47,16 @@ export default function About() {
           transition={{ duration: 0.55, delay: 0.08 }}
         >
           <p className="text-xl leading-9 tracking-[-0.02em] text-slate-300">
-            Graduate in Information Systems Security with a strong interest in
-            applying Artificial Intelligence and Machine Learning to
-            cybersecurity challenges, especially malware detection and
-            explainable AI.
+            I am completing a Master&apos;s degree in Information Systems Security
+            (M2 SSI) at Saad Dahlab University of Blida 1, Algeria (2024–2026),
+            following a Bachelor&apos;s degree in Information Systems (2021–2024).
           </p>
           <p className="mt-5 max-w-2xl leading-7 text-slate-500">
-            My work bridges defensive security, research rigor, and practical
-            software engineering—turning complex data into transparent,
-            trustworthy systems that support better security decisions.
+            My work connects full-stack development, software engineering, and
+            cybersecurity. My Master&apos;s research focuses on Explainable AI and
+            Deep Learning for malware detection, while my practical projects
+            include web applications, database-backed platforms, and interfaces
+            for real operational workflows.
           </p>
 
           <div className="mt-8 grid gap-3 md:grid-cols-3">
