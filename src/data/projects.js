@@ -24,7 +24,11 @@ export const projects = [
     technologies: ["Collaborative development", "Web application design"],
     highlights: ["Course-centered learning experience", "Collaborative university development", "Progress-focused interface concept"],
     preview: "learning", note: "Illustrative interface preview — not a production screenshot.",
-    visualReference: { file: "elearning", label: "Online learning workspace", source: "Unsplash" },
+    screenshots: [
+      ["portal", "E-learning portal"],
+      ["login", "University login"],
+      ["courses", "Course dashboard"],
+    ],
   },
   {
     id: "ecommerce", category: "Web Development", title: "E-Commerce Website Interfaces", eyebrow: "Web development & interface design",

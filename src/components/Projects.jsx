@@ -109,6 +109,43 @@ function CitizenVisionGallery() {
   </div>;
 }
 
+function ELearningGallery({ screens }) {
+  const [expanded, setExpanded] = useState(null);
+
+  useEffect(() => {
+    const closeOnEscape = (event) => {
+      if (event.key === "Escape") setExpanded(null);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, []);
+
+  return <div className="mt-8 border-t border-slate-800 pt-7">
+    <div className="flex flex-wrap items-end justify-between gap-2">
+      <div>
+        <h4 className="text-sm font-semibold text-slate-200">Application screens</h4>
+        <p className="mt-1 text-xs leading-5 text-slate-500">Original screenshots from the Blida 1 e-learning project.</p>
+      </div>
+      <span className="mono text-[10px] uppercase tracking-[.16em] text-teal-300">Click to enlarge</span>
+    </div>
+    <div className="mt-4 grid grid-cols-2 gap-3 lg:grid-cols-3">
+      {screens.map(([file, label]) => <figure key={file} className="group overflow-hidden rounded-xl border border-slate-800 bg-slate-950/50">
+        <button type="button" onClick={() => setExpanded([file, label])} className="relative block w-full overflow-hidden text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300" aria-label={`Enlarge ${label}`}>
+          <img src={`/projects/elearning/${file}.png`} alt={`Blida 1 e-learning project — ${label}`} loading="lazy" width="1812" height="867" sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 260px" className="aspect-[1.5/1] w-full object-cover object-top transition duration-500 group-hover:scale-[1.03]" />
+          <span className="absolute inset-0 grid place-items-center bg-slate-950/0 text-teal-100 opacity-0 transition group-hover:bg-slate-950/45 group-hover:opacity-100"><span className="rounded-full border border-teal-200/40 bg-slate-950/80 p-2"><Maximize2 size={16} /></span></span>
+        </button>
+        <figcaption className="border-t border-slate-800 px-3 py-2 text-[11px] font-medium text-slate-400">{label}</figcaption>
+      </figure>)}
+    </div>
+    {expanded && createPortal(<div role="dialog" aria-modal="true" aria-label={`Expanded ${expanded[1]} screenshot`} className="fixed inset-0 z-[60] grid place-items-center bg-[#02050bdd] p-4 backdrop-blur-sm" onClick={() => setExpanded(null)}>
+      <div className="relative max-h-[92vh] max-w-6xl" onClick={(event) => event.stopPropagation()}>
+        <img src={`/projects/elearning/${expanded[0]}.png`} alt={`Blida 1 e-learning project — ${expanded[1]}`} className="max-h-[86vh] max-w-full rounded-xl border border-slate-600 object-contain shadow-2xl" />
+        <div className="mt-3 flex items-center justify-between gap-4 text-sm text-slate-300"><span>{expanded[1]}</span><button type="button" onClick={() => setExpanded(null)} className="inline-flex items-center gap-2 rounded-lg border border-slate-600 bg-slate-900 px-3 py-2 text-xs font-semibold text-slate-100 transition hover:border-teal-300/60"><X size={15} /> Close</button></div>
+      </div>
+    </div>, document.body)}
+  </div>;
+}
+
 function VisualReference({ reference }) {
   const [expanded, setExpanded] = useState(false);
 
@@ -158,7 +195,7 @@ export default function Projects() {
     <div className="mt-9 flex flex-wrap gap-2" role="tablist" aria-label="Project categories">{projectCategories.map((item) => <button type="button" role="tab" aria-selected={category === item} key={item} onClick={() => selectCategory(item)} className={`rounded-full border px-4 py-2 text-sm font-medium transition ${category === item ? "border-teal-300/50 bg-teal-300/10 text-teal-100" : "border-slate-700 bg-slate-900/60 text-slate-400 hover:text-slate-200"}`}>{item}</button>)}</div>
     <div className="mt-8 grid gap-5 lg:grid-cols-[.83fr_1.17fr]">
       <div className="space-y-3">{filtered.map((project, index) => <button key={project.id} type="button" onClick={() => setSelectedId(project.id)} className={`glass w-full rounded-2xl p-5 text-left transition ${selected.id === project.id ? "border-teal-300/35 bg-teal-300/[.045]" : "hover:border-slate-600"}`}><span className="mono text-[10px] uppercase tracking-[.17em] text-teal-300">0{index + 1} · {project.eyebrow}</span><h3 className="mt-2 text-lg font-bold text-slate-100">{project.title}</h3><p className="mt-2 text-sm leading-6 text-slate-400">{project.description}</p><span className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-teal-200">View project <ChevronRight size={14} /></span></button>)}</div>
-      <motion.article key={selected.id} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="glass overflow-hidden rounded-[1.6rem]"><div className="bg-[radial-gradient(circle_at_70%_0%,rgba(94,234,212,.14),transparent_40%),linear-gradient(135deg,rgba(30,41,59,.6),rgba(6,10,18,.6))] p-5 sm:p-7"><div className="h-64 sm:h-72"><Preview type={selected.preview} /></div></div><div className="p-6 sm:p-8"><div className="flex flex-wrap items-center gap-3"><span className="mono text-[10px] uppercase tracking-[.18em] text-teal-300">{selected.category}</span><span className="text-xs text-slate-500">{selected.note}</span></div><h3 className="mt-4 text-2xl font-bold tracking-[-.035em] text-slate-100">{selected.title}</h3><p className="mt-3 max-w-3xl leading-7 text-slate-400">{selected.longDescription}</p><div className="mt-6 grid gap-3 sm:grid-cols-2">{selected.highlights.map((item) => <div key={item} className="flex items-start gap-2 text-sm text-slate-300"><CheckCircle2 size={16} className="mt-0.5 shrink-0 text-teal-300" />{item}</div>)}</div>{selected.results && <div className="mt-7 grid gap-3 sm:grid-cols-3">{selected.results.map(([label, value]) => <div key={label} className="rounded-xl border border-teal-300/15 bg-teal-300/[.045] p-3"><p className="text-[10px] uppercase tracking-[.14em] text-slate-500">{label}</p><p className="mt-1 text-lg font-bold text-teal-200">{value}</p></div>)}</div>}<div className="mt-7 flex flex-wrap gap-2">{selected.technologies.map((tech) => <span key={tech} className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 text-xs text-slate-300">{tech}</span>)}</div>{selected.id === "sonelgaz" && <SonelgazGallery />}{selected.id === "citizenvision" && <CitizenVisionGallery />}{selected.visualReference && <VisualReference reference={selected.visualReference} />}</div></motion.article>
+      <motion.article key={selected.id} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="glass overflow-hidden rounded-[1.6rem]"><div className="bg-[radial-gradient(circle_at_70%_0%,rgba(94,234,212,.14),transparent_40%),linear-gradient(135deg,rgba(30,41,59,.6),rgba(6,10,18,.6))] p-5 sm:p-7"><div className="h-64 sm:h-72"><Preview type={selected.preview} /></div></div><div className="p-6 sm:p-8"><div className="flex flex-wrap items-center gap-3"><span className="mono text-[10px] uppercase tracking-[.18em] text-teal-300">{selected.category}</span><span className="text-xs text-slate-500">{selected.note}</span></div><h3 className="mt-4 text-2xl font-bold tracking-[-.035em] text-slate-100">{selected.title}</h3><p className="mt-3 max-w-3xl leading-7 text-slate-400">{selected.longDescription}</p><div className="mt-6 grid gap-3 sm:grid-cols-2">{selected.highlights.map((item) => <div key={item} className="flex items-start gap-2 text-sm text-slate-300"><CheckCircle2 size={16} className="mt-0.5 shrink-0 text-teal-300" />{item}</div>)}</div>{selected.results && <div className="mt-7 grid gap-3 sm:grid-cols-3">{selected.results.map(([label, value]) => <div key={label} className="rounded-xl border border-teal-300/15 bg-teal-300/[.045] p-3"><p className="text-[10px] uppercase tracking-[.14em] text-slate-500">{label}</p><p className="mt-1 text-lg font-bold text-teal-200">{value}</p></div>)}</div>}<div className="mt-7 flex flex-wrap gap-2">{selected.technologies.map((tech) => <span key={tech} className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 text-xs text-slate-300">{tech}</span>)}</div>{selected.id === "sonelgaz" && <SonelgazGallery />}{selected.id === "citizenvision" && <CitizenVisionGallery />}{selected.screenshots && <ELearningGallery screens={selected.screenshots} />}{selected.visualReference && <VisualReference reference={selected.visualReference} />}</div></motion.article>
     </div>
     <a href="#contact" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-teal-200 transition hover:text-teal-100">Have a project in mind? Let&apos;s discuss it <ArrowUpRight size={16} /></a>
   </section>;
