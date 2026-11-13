@@ -24,6 +24,7 @@ export const projects = [
     technologies: ["Collaborative development", "Web application design"],
     highlights: ["Course-centered learning experience", "Collaborative university development", "Progress-focused interface concept"],
     preview: "learning", note: "Illustrative interface preview — not a production screenshot.",
+    visualReference: { file: "elearning", label: "Online learning workspace", source: "Unsplash" },
   },
   {
     id: "ecommerce", category: "Web Development", title: "E-Commerce Website Interfaces", eyebrow: "Web development & interface design",
@@ -32,6 +33,7 @@ export const projects = [
     technologies: ["HTML5", "CSS3", "JavaScript", "Bootstrap"],
     highlights: ["Responsive product grid patterns", "Modern storefront and detail views", "Clear, conversion-aware interface hierarchy"],
     preview: "commerce", note: "Illustrative interface preview — not a production storefront.",
+    visualReference: { file: "ecommerce", label: "Online commerce workspace", source: "Unsplash" },
   },
   {
     id: "voting", category: "Software Engineering", title: "University Voting Application", eyebrow: "Individual university project",
@@ -40,6 +42,7 @@ export const projects = [
     technologies: ["Java EE", "Java"],
     highlights: ["Individual application development", "Election and candidate management interface", "Voting and result presentation concepts"],
     preview: "vote", note: "Illustrative interface preview — not a verified production deployment.",
+    visualReference: { file: "voting", label: "Digital participation reference", source: "Unsplash" },
   },
   {
     id: "malware", category: "Cybersecurity & AI", title: "Towards Explainable Malware Detection", eyebrow: "Master's research · M2 Information Systems Security",
@@ -49,5 +52,6 @@ export const projects = [
     highlights: ["Static PE feature analysis and malware classification", "Explainability with SHAP, LIME, and GNNExplainer", "Relational graph-based learning pipeline"],
     results: [["Classification accuracy", "96.20%"], ["ROC-AUC", "0.9915"], ["BODMAS validation", "91.19%"]],
     preview: "research", note: "Research architecture visualization based on the thesis methodology.",
+    visualReference: { file: "malware", label: "Cybersecurity research workspace", source: "Unsplash" },
   },
 ];
