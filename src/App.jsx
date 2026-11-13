@@ -10,7 +10,7 @@ import { ShieldCheck } from "lucide-react";
 
 function App() {
   return (
-    <div className="noise min-h-screen overflow-hidden bg-[#060a12] text-slate-100">
+    <div className="noise min-h-screen overflow-hidden bg-slate-50 text-slate-900">
       <Navbar />
       <main>
         <Hero />
@@ -21,7 +21,7 @@ function App() {
         <Research />
         <Contact />
       </main>
-      <footer className="border-t border-slate-800 bg-[#060a12]">
+      <footer className="border-t border-slate-200 bg-white">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-7 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10">
           <div className="flex items-center gap-2">
             <span className="mono text-teal-300">ST</span>

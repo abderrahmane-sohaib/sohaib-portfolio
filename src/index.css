@@ -3,8 +3,8 @@
 
 :root {
   font-family: "Manrope", system-ui, sans-serif;
-  color: #e8efff;
-  background: #060a12;
+  color: #172033;
+  background: #f7fafc;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
 }
@@ -15,9 +15,9 @@ body {
   min-width: 320px;
   overflow-x: hidden;
   background:
-    radial-gradient(circle at 77% -8%, rgba(8, 104, 141, 0.22), transparent 33rem),
-    radial-gradient(circle at 0% 37%, rgba(21, 78, 121, 0.15), transparent 29rem),
-    #060a12;
+    radial-gradient(circle at 77% -8%, rgba(14, 165, 233, 0.13), transparent 33rem),
+    radial-gradient(circle at 0% 37%, rgba(20, 184, 166, 0.1), transparent 29rem),
+    #f7fafc;
 }
 
 ::selection { background: rgba(45, 212, 191, 0.3); color: #f3fffd; }
@@ -41,12 +41,31 @@ body {
 }
 
 .glass {
-  background: linear-gradient(135deg, rgba(16, 28, 46, 0.78), rgba(9, 17, 30, 0.63));
-  border: 1px solid rgba(130, 174, 205, 0.16);
-  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.035);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(241, 245, 249, 0.9));
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 .glass:hover { border-color: rgba(94, 234, 212, 0.28); }
+
+/* Light theme palette for the existing utility-based components. */
+.noise [class*="bg-[#060a12"], .noise [class*="bg-[#07101c"], .noise [class*="bg-[#07111d"], .noise [class*="bg-[#08101b"] { background-color: #f8fafc !important; }
+.noise [class*="bg-slate-950"], .noise [class*="bg-slate-900"] { background-color: #ffffff !important; }
+.noise [class*="border-slate-8"], .noise [class*="border-slate-7"] { border-color: #dbe4ee !important; }
+.noise .text-slate-100, .noise .text-slate-200 { color: #162033 !important; }
+.noise .text-slate-300 { color: #334155 !important; }
+.noise .text-slate-400 { color: #475569 !important; }
+.noise .text-slate-500, .noise .text-slate-600 { color: #64748b !important; }
+.noise [class*="bg-teal-300/"] { background-color: rgba(13, 148, 136, 0.09) !important; }
+.noise [class*="bg-blue-300/"] { background-color: rgba(37, 99, 235, 0.08) !important; }
+
+.browser-frame { background: #0b1728 !important; border-color: #334155 !important; }
+.browser-frame .text-slate-100, .browser-frame .text-slate-200 { color: #f1f5f9 !important; }
+.browser-frame .text-slate-300 { color: #cbd5e1 !important; }
+.browser-frame .text-slate-400, .browser-frame .text-slate-500, .browser-frame .text-slate-600 { color: #94a3b8 !important; }
+.browser-frame [class*="bg-slate-950"], .browser-frame [class*="bg-slate-900"] { background-color: #0f1d31 !important; }
+[role="dialog"] .text-slate-100, [role="dialog"] .text-slate-200, [role="dialog"] .text-slate-300 { color: #e2e8f0 !important; }
+[role="dialog"] [class*="bg-slate-900"] { background-color: #0f172a !important; }
 
 .section-anchor { scroll-margin-top: 6rem; }
 

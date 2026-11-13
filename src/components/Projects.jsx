@@ -5,7 +5,7 @@ import { ArrowUpRight, CheckCircle2, ChevronRight, Maximize2, X } from "lucide-r
 import { projectCategories, projects } from "../data/projects";
 
 function Browser({ children, label }) {
-  return <div className="relative h-full overflow-hidden rounded-2xl border border-slate-700/70 bg-[#07111d] p-4 shadow-2xl"><div className="mb-4 flex items-center gap-1.5"><i className="h-2 w-2 rounded-full bg-rose-400" /><i className="h-2 w-2 rounded-full bg-amber-300" /><i className="h-2 w-2 rounded-full bg-teal-300" /><span className="ml-2 truncate text-[9px] tracking-[0.15em] text-slate-500">{label}</span></div>{children}</div>;
+  return <div className="browser-frame relative h-full overflow-hidden rounded-2xl border border-slate-700/70 bg-[#07111d] p-4 shadow-2xl"><div className="mb-4 flex items-center gap-1.5"><i className="h-2 w-2 rounded-full bg-rose-400" /><i className="h-2 w-2 rounded-full bg-amber-300" /><i className="h-2 w-2 rounded-full bg-teal-300" /><span className="ml-2 truncate text-[9px] tracking-[0.15em] text-slate-500">{label}</span></div>{children}</div>;
 }
 
 function Preview({ type }) {
