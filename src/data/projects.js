@@ -10,6 +10,14 @@ export const projects = [
     preview: "service", note: "Original project screenshots anonymized for public presentation.",
   },
   {
+    id: "citizenvision", category: "Web Development", title: "CitizenVision — Civic Ideas Platform", eyebrow: "Java EE full-stack project",
+    description: "A civic participation web application where users can propose ideas, vote, and manage their own contributions.",
+    longDescription: "CitizenVision is a Java EE web platform designed to support citizen participation. It provides secure registration, authentication, idea submission with image uploads, voting, personal idea management, and protected administration features.",
+    technologies: ["Java EE", "Servlets & JSP", "MySQL", "Tomcat", "JavaScript", "Bootstrap"],
+    highlights: ["Secure registration and authenticated user journeys", "Idea submission, image uploads, and vote management", "Role-protected administration and user-owned content controls"],
+    preview: "citizenvision", note: "Original application screenshots created with demonstration data.",
+  },
+  {
     id: "elearning", category: "Web Development", title: "E-Learning Web Application", eyebrow: "University group project · Team of 9",
     description: "A collaborative university project exploring the design of a web-based learning platform.",
     longDescription: "This project demonstrates collaborative software development around an online learning experience, with a course-oriented interface and learner progress views presented as an illustrative product preview.",
