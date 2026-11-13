@@ -56,6 +56,9 @@ body {
 .noise .text-slate-300 { color: #334155 !important; }
 .noise .text-slate-400 { color: #475569 !important; }
 .noise .text-slate-500, .noise .text-slate-600 { color: #64748b !important; }
+.noise .text-teal-100, .noise .text-teal-200 { color: #0f766e !important; }
+.noise .text-teal-300 { color: #0d9488 !important; }
+.noise .text-blue-200 { color: #1d4ed8 !important; }
 .noise [class*="bg-teal-300/"] { background-color: rgba(13, 148, 136, 0.09) !important; }
 .noise [class*="bg-blue-300/"] { background-color: rgba(37, 99, 235, 0.08) !important; }
 

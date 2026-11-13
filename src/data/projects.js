@@ -1,4 +1,4 @@
-export const projectCategories = ["Web Development", "Software Engineering", "Cybersecurity & AI"];
+export const projectCategories = ["Web Development", "Cybersecurity & AI"];
 
 export const projects = [
   {
@@ -44,22 +44,18 @@ export const projects = [
     ],
   },
   {
-    id: "voting", category: "Software Engineering", title: "University Voting Application", eyebrow: "Individual university project",
-    description: "An individual Java EE university project for managing candidates, elections, votes, and results.",
-    longDescription: "The application models the key stages of a university election: candidate presentation, vote submission, and results consultation. The project focused on structuring the application logic and the user journey around a simple, auditable voting process.",
-    technologies: ["Java EE", "Java"],
-    highlights: ["Individual application development", "Election and candidate management interface", "Voting and result presentation concepts"],
-    preview: "vote", note: "Illustrative interface preview — not a verified production deployment.",
-    visualReference: { file: "voting", label: "Digital participation reference", source: "Unsplash" },
-  },
-  {
     id: "malware", category: "Cybersecurity & AI", title: "Towards Explainable Malware Detection", eyebrow: "Master's research · M2 Information Systems Security",
     description: "Master's research on explainable malware detection using deep learning and relational graphs.",
     longDescription: "This research investigates multi-task malware detection from static PE features, combining deep neural networks with relational graph learning. Explainability methods—SHAP, LIME, and GNNExplainer—are used to make classification decisions more understandable and actionable.",
     technologies: ["Python", "Deep Learning", "Relational GNNs", "SHAP & LIME", "GNNExplainer"],
     highlights: ["Static PE feature analysis and malware classification", "Explainability with SHAP, LIME, and GNNExplainer", "Relational graph-based learning pipeline"],
     results: [["Classification accuracy", "96.20%"], ["ROC-AUC", "0.9915"], ["BODMAS validation", "91.19%"]],
-    preview: "research", note: "Research architecture visualization based on the thesis methodology.",
-    visualReference: { file: "malware", label: "Cybersecurity research workspace", source: "Unsplash" },
+    preview: "research", note: "Original ASM Secure research prototype screenshots supplied for public presentation.",
+    screenshots: [
+      ["home", "ASM Secure landing page"],
+      ["predict", "Single-sample malware prediction"],
+      ["compare", "FFNN and GNN comparison"],
+      ["explainability", "Explainability analysis"],
+    ],
   },
 ];

@@ -5,27 +5,30 @@ const skillGroups = [
   {
     title: "Web Development",
     icon: Code2,
+    summary: "Responsive interfaces and practical full-stack applications.",
     skills: [
-      "PHP", "Laravel", "JavaScript", "HTML5", "CSS3", "Bootstrap",
-      "MySQL", "REST API fundamentals", "AJAX / Fetch", "Git & GitHub",
+      "HTML5", "CSS3", "JavaScript", "React", "Bootstrap", "Responsive UI",
     ],
   },
   {
-    title: "Programming Languages",
+    title: "Backend & Data",
     icon: BrainCircuit,
+    summary: "Server-side workflows, databases, and application integration.",
     skills: [
-      "Python", "Java", "C", "C++",
+      "PHP", "Laravel", "Java EE", "MySQL", "REST APIs", "AJAX / Fetch",
     ],
   },
   {
     title: "Cybersecurity & AI",
     icon: ShieldCheck,
+    summary: "Security research and explainable machine-learning methods.",
     skills: ["Information Systems Security", "Network Security", "Deep Learning", "Explainable AI", "Malware Detection", "Graph Neural Networks", "SHAP & LIME"],
   },
   {
-    title: "Software Engineering",
+    title: "Engineering Practice",
     icon: Terminal,
-    skills: ["Java EE", "Database-backed applications", "Collaborative development", "Interface design"],
+    summary: "Foundations for reliable, collaborative software delivery.",
+    skills: ["Java", "Python", "C", "C++", "Git & GitHub", "Database-backed apps", "Collaborative development", "Interface design"],
   },
 ];
 
@@ -46,11 +49,11 @@ export default function Skills() {
             <span className="h-px w-6 bg-teal-300/80" /> 02 / Expertise
           </p>
           <h2 className="text-3xl font-bold tracking-[-0.045em] text-slate-100 sm:text-4xl">
-            A balanced, practical technical foundation.
+            Core technologies and areas of practice.
           </h2>
           <p className="mt-4 max-w-2xl text-base leading-7 text-slate-400">
-            Full-stack web development and software engineering experience,
-            reinforced by a specialized cybersecurity and AI research focus.
+            A focused stack for building modern web applications, supported by
+            software-engineering foundations and cybersecurity research.
           </p>
         </motion.div>
 
@@ -77,11 +80,12 @@ export default function Skills() {
                 <h3 className="text-base font-bold text-slate-100">
                   {group.title}
                 </h3>
+                <p className="mt-2 text-sm leading-6 text-slate-500">{group.summary}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {group.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="inline-flex items-center rounded-full border border-slate-700/80 bg-slate-900/70 px-3 py-1 text-xs font-medium text-slate-300"
+                      className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-700 transition hover:border-teal-300/60 hover:bg-teal-50"
                     >
                       {skill}
                     </span>
