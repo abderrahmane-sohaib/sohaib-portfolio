@@ -23,7 +23,7 @@ export const projects = [
     longDescription: "This project demonstrates collaborative software development around an online learning experience, with a course-oriented interface and learner progress views presented as an illustrative product preview.",
     technologies: ["Collaborative development", "Web application design"],
     highlights: ["Course-centered learning experience", "Collaborative university development", "Progress-focused interface concept"],
-    preview: "learning", note: "Illustrative interface preview — not a production screenshot.",
+    preview: "learning", note: "Original project screenshots supplied for public presentation.",
     screenshots: [
       ["portal", "E-learning portal"],
       ["login", "University login"],
@@ -36,8 +36,12 @@ export const projects = [
     longDescription: "These individual e-commerce interface explorations focus on polished storefront design: product grids, product detail patterns, and responsive shopping flows. They are shown as separate illustrative web design work rather than claims of live commercial stores.",
     technologies: ["HTML5", "CSS3", "JavaScript", "Bootstrap"],
     highlights: ["Responsive product grid patterns", "Modern storefront and detail views", "Clear, conversion-aware interface hierarchy"],
-    preview: "commerce", note: "Illustrative interface preview — not a production storefront.",
-    visualReference: { file: "ecommerce", label: "Online commerce workspace", source: "Unsplash" },
+    preview: "commerce", note: "Original interface screenshots supplied for public presentation.",
+    screenshots: [
+      ["home", "Storefront landing page"],
+      ["cart", "Shopping cart"],
+      ["login", "Sign in page"],
+    ],
   },
   {
     id: "voting", category: "Software Engineering", title: "University Voting Application", eyebrow: "Individual university project",
